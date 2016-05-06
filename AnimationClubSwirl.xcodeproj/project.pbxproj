@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C07ED8D21CDD1E7D002314F9 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C07ED8D11CDD1E7D002314F9 /* ViewController.xib */; };
+		C07ED8D41CDD1FB1002314F9 /* SvgToBezierConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07ED8D31CDD1FB1002314F9 /* SvgToBezierConverter.swift */; };
 		C08B7B5C1CDD1AFF00E44C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B7B5B1CDD1AFF00E44C32 /* AppDelegate.swift */; };
 		C08B7B5E1CDD1AFF00E44C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B7B5D1CDD1AFF00E44C32 /* ViewController.swift */; };
 		C08B7B631CDD1AFF00E44C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08B7B621CDD1AFF00E44C32 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		C07ED8D11CDD1E7D002314F9 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		C07ED8D31CDD1FB1002314F9 /* SvgToBezierConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SvgToBezierConverter.swift; sourceTree = "<group>"; };
 		C08B7B581CDD1AFF00E44C32 /* AnimationClubSwirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationClubSwirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08B7B5B1CDD1AFF00E44C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C08B7B5D1CDD1AFF00E44C32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				C08B7B5B1CDD1AFF00E44C32 /* AppDelegate.swift */,
 				C08B7B5D1CDD1AFF00E44C32 /* ViewController.swift */,
+				C07ED8D31CDD1FB1002314F9 /* SvgToBezierConverter.swift */,
 				C08B7B621CDD1AFF00E44C32 /* Assets.xcassets */,
 				C08B7B641CDD1AFF00E44C32 /* LaunchScreen.storyboard */,
 				C08B7B671CDD1AFF00E44C32 /* Info.plist */,
@@ -199,6 +202,7 @@
 			files = (
 				C08B7B5E1CDD1AFF00E44C32 /* ViewController.swift in Sources */,
 				C08B7B5C1CDD1AFF00E44C32 /* AppDelegate.swift in Sources */,
+				C07ED8D41CDD1FB1002314F9 /* SvgToBezierConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
