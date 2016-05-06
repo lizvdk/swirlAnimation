@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C07ED8D21CDD1E7D002314F9 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C07ED8D11CDD1E7D002314F9 /* ViewController.xib */; };
 		C08B7B5C1CDD1AFF00E44C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B7B5B1CDD1AFF00E44C32 /* AppDelegate.swift */; };
 		C08B7B5E1CDD1AFF00E44C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B7B5D1CDD1AFF00E44C32 /* ViewController.swift */; };
-		C08B7B611CDD1AFF00E44C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08B7B5F1CDD1AFF00E44C32 /* Main.storyboard */; };
 		C08B7B631CDD1AFF00E44C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08B7B621CDD1AFF00E44C32 /* Assets.xcassets */; };
 		C08B7B661CDD1AFF00E44C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08B7B641CDD1AFF00E44C32 /* LaunchScreen.storyboard */; };
 		C08B7B711CDD1AFF00E44C32 /* AnimationClubSwirlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B7B701CDD1AFF00E44C32 /* AnimationClubSwirlTests.swift */; };
@@ -26,10 +26,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C07ED8D11CDD1E7D002314F9 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		C08B7B581CDD1AFF00E44C32 /* AnimationClubSwirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationClubSwirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08B7B5B1CDD1AFF00E44C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C08B7B5D1CDD1AFF00E44C32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C08B7B601CDD1AFF00E44C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C08B7B621CDD1AFF00E44C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C08B7B651CDD1AFF00E44C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C08B7B671CDD1AFF00E44C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,10 +79,10 @@
 			children = (
 				C08B7B5B1CDD1AFF00E44C32 /* AppDelegate.swift */,
 				C08B7B5D1CDD1AFF00E44C32 /* ViewController.swift */,
-				C08B7B5F1CDD1AFF00E44C32 /* Main.storyboard */,
 				C08B7B621CDD1AFF00E44C32 /* Assets.xcassets */,
 				C08B7B641CDD1AFF00E44C32 /* LaunchScreen.storyboard */,
 				C08B7B671CDD1AFF00E44C32 /* Info.plist */,
+				C07ED8D11CDD1E7D002314F9 /* ViewController.xib */,
 			);
 			path = AnimationClubSwirl;
 			sourceTree = "<group>";
@@ -178,8 +178,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C08B7B661CDD1AFF00E44C32 /* LaunchScreen.storyboard in Resources */,
+				C07ED8D21CDD1E7D002314F9 /* ViewController.xib in Resources */,
 				C08B7B631CDD1AFF00E44C32 /* Assets.xcassets in Resources */,
-				C08B7B611CDD1AFF00E44C32 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +221,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C08B7B5F1CDD1AFF00E44C32 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C08B7B601CDD1AFF00E44C32 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C08B7B641CDD1AFF00E44C32 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -390,6 +382,7 @@
 				C08B7B771CDD1AFF00E44C32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C08B7B781CDD1AFF00E44C32 /* Build configuration list for PBXNativeTarget "AnimationClubSwirlTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +391,7 @@
 				C08B7B7A1CDD1AFF00E44C32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
