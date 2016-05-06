@@ -10,16 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var swirlView: Swirl!
+    @IBOutlet weak var playAnimationButton: UIButton!
+
+    var isAnimating = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        swirlView.layer.cornerRadius = swirlView.bounds.width / 2
     }
 
+    @IBAction func playAnimationButtonPressed(sender: UIButton) {
+        if isAnimating {
+            swirlView.stopAnimatingSwirl()
+            playAnimationButton.setTitle("▶︎", forState: .Normal)
+            isAnimating = false
+        } else {
+            swirlView.animateSwirl()
+            playAnimationButton.setTitle("▦", forState: .Normal)
+            isAnimating = true
+        }
 
+    }
 }
 

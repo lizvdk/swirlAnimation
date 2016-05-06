@@ -10,7 +10,7 @@ import UIKit
 
 public class SvgToBezierConverter {
 
-    func bezierPathFromSVGPath(str: String) -> UIBezierPath {
+    func bezierPathFromSVGPath(str: String, orgSize: CGRect, newSize: CGRect) -> UIBezierPath {
         let scanner = NSScanner(string: str)
 
         // skip commas and whitespace
@@ -32,7 +32,10 @@ public class SvgToBezierConverter {
 
             // scan for pairs of Double, adding them as CGPoints to the points array
             while scanner.scanDouble(&x) && scanner.scanDouble(&y) {
-                points.append(CGPoint(x: x, y: y))
+                let adjustedX = (x / Double(orgSize.width)) * Double (newSize.width)
+                let adjustedY = (y / Double(orgSize.height)) * Double(newSize.height)
+
+                points.append(CGPoint(x: adjustedX, y: adjustedY))
             }
 
             // new point for bezier path

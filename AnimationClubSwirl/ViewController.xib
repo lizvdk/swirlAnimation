@@ -3,10 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="AnimationClubSwirl" customModuleProvider="target">
             <connections>
+                <outlet property="playAnimationButton" destination="wWW-af-SY6" id="zss-W1-lNf"/>
+                <outlet property="swirlView" destination="46g-gF-rod" id="V6T-cG-ptv"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Cef-II-BR4"/>
             </connections>
         </placeholder>
@@ -14,7 +18,33 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46g-gF-rod" userLabel="SwirlView" customClass="Swirl" customModule="AnimationClubSwirl" customModuleProvider="target">
+                    <rect key="frame" x="60" y="60" width="480" height="480"/>
+                    <color key="backgroundColor" red="0.070588238540000001" green="0.61568629740000003" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="46g-gF-rod" secondAttribute="height" multiplier="1:1" id="meZ-AC-A5a"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWW-af-SY6" userLabel="PlayAnimationButton">
+                    <rect key="frame" x="276" y="550" width="48" height="70"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
+                    <state key="normal" title="▶︎">
+                        <color key="titleColor" red="0.070588238540000001" green="0.61568629740000003" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="playAnimationButtonPressed:" destination="-1" eventType="touchUpInside" id="AZD-v0-m1V"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.86666667460000002" green="0.94901961089999998" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="46g-gF-rod" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tcx-GH-jE3"/>
+                <constraint firstItem="wWW-af-SY6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZUG-63-Ejc"/>
+                <constraint firstItem="46g-gF-rod" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hVX-Ts-nyz"/>
+                <constraint firstItem="46g-gF-rod" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="4:5" id="oik-o3-H11"/>
+                <constraint firstItem="wWW-af-SY6" firstAttribute="top" secondItem="46g-gF-rod" secondAttribute="bottom" constant="10" id="zqA-8d-Bt0"/>
+            </constraints>
         </view>
     </objects>
 </document>
