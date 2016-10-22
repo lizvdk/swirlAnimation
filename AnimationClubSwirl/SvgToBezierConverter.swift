@@ -8,25 +8,25 @@
 
 import UIKit
 
-public class SvgToBezierConverter {
+open class SvgToBezierConverter {
 
-    func bezierPathFromSVGPath(str: String, orgSize: CGRect, newSize: CGRect) -> UIBezierPath {
-        let scanner = NSScanner(string: str)
+    func bezierPathFromSVGPath(_ str: String, orgSize: CGRect, newSize: CGRect) -> UIBezierPath {
+        let scanner = Scanner(string: str)
 
         // skip commas and whitespace
-        let skipChars = NSMutableCharacterSet(charactersInString: ",")
-        skipChars.formUnionWithCharacterSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-        scanner.charactersToBeSkipped = skipChars
+        let skipChars = NSMutableCharacterSet(charactersIn: ",")
+        skipChars.formUnion(with: CharacterSet.whitespacesAndNewlines)
+        scanner.charactersToBeSkipped = skipChars as CharacterSet
 
         // the resulting bezier path
         let path = UIBezierPath()
 
         // instructions code can be upper- or lower-case
-        let instructionSet = NSCharacterSet(charactersInString: "MCSQTAmcsqta")
+        let instructionSet = CharacterSet(charactersIn: "MCSQTAmcsqta")
         var instruction: NSString?
 
         // scan for an instruction code
-        while scanner.scanCharactersFromSet(instructionSet, intoString: &instruction) {
+        while scanner.scanCharacters(from: instructionSet, into: &instruction) {
             var x = 0.0, y = 0.0
             var points: [CGPoint] = []
 
@@ -41,11 +41,11 @@ public class SvgToBezierConverter {
             // new point for bezier path
             switch instruction ?? "" {
             case "M":
-                path.moveToPoint(points[0])
+                path.move(to: points[0])
             case "C":
-                path.addCurveToPoint(points[2], controlPoint1: points[0], controlPoint2: points[1])
+                path.addCurve(to: points[2], controlPoint1: points[0], controlPoint2: points[1])
             case "c":
-                path.addCurveToPoint(path.currentPoint.offset(points[2]),
+                path.addCurve(to: path.currentPoint.offset(points[2]),
                                      controlPoint1: path.currentPoint.offset(points[0]),
                                      controlPoint2: path.currentPoint.offset(points[1]))
             default:
@@ -59,7 +59,7 @@ public class SvgToBezierConverter {
 }
 
 extension CGPoint {
-    func offset(p: CGPoint) -> CGPoint {
+    func offset(_ p: CGPoint) -> CGPoint {
         return CGPoint(x: x + p.x, y: y + p.y)
     }
 }

@@ -24,14 +24,14 @@ class ViewController: UIViewController {
         swirlView.layer.cornerRadius = swirlView.bounds.width / 2
     }
 
-    @IBAction func playAnimationButtonPressed(sender: UIButton) {
+    @IBAction func playAnimationButtonPressed(_ sender: UIButton) {
         if isAnimating {
             swirlView.stopAnimatingSwirl()
-            playAnimationButton.setTitle("▶︎", forState: .Normal)
+            playAnimationButton.setTitle("▶︎", for: UIControlState())
             isAnimating = false
         } else {
             swirlView.animateSwirl()
-            playAnimationButton.setTitle("▦", forState: .Normal)
+            playAnimationButton.setTitle("▦", for: UIControlState())
             isAnimating = true
         }
 
