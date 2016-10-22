@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Swirl: UIView  {
+open class Swirl: UIView  {
 
     let svgConverter = SvgToBezierConverter()
     let svgPathData = "M67.3,243.1c24.6-24.6,34.8,0,77,0c117.4,0,127.5-111.9,58.7-111.9c-67.9,0-58.7,111.9,58.7,111.9c37.8,0,56.5-20.5,77,0"
@@ -25,11 +25,11 @@ public class Swirl: UIView  {
         commonInit()
     }
 
-    private let circleLayer = CAShapeLayer()
-    private let twistLayer = CAShapeLayer()
-    private var shapeLayers = [CAShapeLayer]()
+    fileprivate let circleLayer = CAShapeLayer()
+    fileprivate let twistLayer = CAShapeLayer()
+    fileprivate var shapeLayers = [CAShapeLayer]()
 
-    private func commonInit() {
+    fileprivate func commonInit() {
         shapeLayers = [circleLayer, twistLayer]
 
         layer.addSublayer(circleLayer)
@@ -37,25 +37,25 @@ public class Swirl: UIView  {
 
         for shapeLayer in shapeLayers {
             shapeLayer.lineWidth = 10.0
-            shapeLayer.strokeColor = UIColor.whiteColor().CGColor
-            shapeLayer.fillColor = UIColor.clearColor().CGColor
+            shapeLayer.strokeColor = UIColor.white.cgColor
+            shapeLayer.fillColor = UIColor.clear.cgColor
             shapeLayer.lineCap = kCALineCapRound
             shapeLayer.strokeEnd = 0.0
         }
     }
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
 
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
         let radius: CGFloat = 90.0
         let startAngle = CGFloat(-M_PI_2)
         let endAngle = startAngle + CGFloat(M_PI * 2)
-        let path = UIBezierPath(arcCenter: CGPointZero, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-        circleLayer.path = path.CGPath
+        let path = UIBezierPath(arcCenter: CGPoint.zero, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        circleLayer.path = path.cgPath
         circleLayer.position = center
 
-        twistLayer.path = svgConverter.bezierPathFromSVGPath(svgPathData, orgSize: CGRect(x: 0, y: 0, width: 400, height: 400), newSize: bounds).CGPath
+        twistLayer.path = svgConverter.bezierPathFromSVGPath(svgPathData, orgSize: CGRect(x: 0, y: 0, width: 400, height: 400), newSize: bounds).cgPath
     }
 
     func animateSwirl() {
@@ -80,8 +80,8 @@ public class Swirl: UIView  {
         group.duration = fillAnimation.duration + clearAnimation.duration + delayBetweenFillAndClearAnimations + repeatAnimationDelay
         group.repeatCount = Float.infinity
 
-        twistLayer.addAnimation(group, forKey: nil)
-        circleLayer.addAnimation(group, forKey: nil)
+        twistLayer.add(group, forKey: nil)
+        circleLayer.add(group, forKey: nil)
     }
 
     func stopAnimatingSwirl() {
